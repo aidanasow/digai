@@ -44,13 +44,14 @@ export const Header = () => {
                     <Burger className={styles.burger} onClick={handleMenu} />
                 </div>
             </div>
-            <div
-                className={`${styles.burgerCardWrapper} ${
-                    isBurgerVisible ? styles.visible : ""
-                }`}
-            >
-                <BurgerCard onClose={() => setIsBurgerVisible(false)} />
-            </div>
+            {
+                isBurgerVisible && <div
+                    className={styles.burgerCardWrapper}
+                >
+                    <BurgerCard onClose={() => setIsBurgerVisible(false)}/>
+                </div>
+            }
+
         </header>
     );
 };
